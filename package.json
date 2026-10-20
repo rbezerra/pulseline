@@ -1,0 +1,18 @@
+{
+  "name": "pulseline",
+  "private": true,
+  "version": "1.0.0",
+  "description": "PulseLine BFF — Real-time Operational Telemetry & AI Incident Triage Platform",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:bff": "npm --workspace=apps/bff run dev",
+    "dev:web": "npm --workspace=apps/web run dev",
+    "build:bff": "npm --workspace=apps/bff run build",
+    "build:web": "npm --workspace=apps/web run build",
+    "test:bff": "npm --workspace=apps/bff run test",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down"
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: pulseline-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pulseline
+      POSTGRES_PASSWORD: pulseline_password
+      POSTGRES_DB: pulseline_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pulseline_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pulseline -d pulseline_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pulseline_pgdata:
