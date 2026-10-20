@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #070b14;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.telemetry-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(51, 65, 85, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 65, 85, 0.12) 1px, transparent 1px);
+}
